@@ -1,5 +1,5 @@
 """
-Assignment 2 Monoalphabetic Subsitution Cipher
+Assignment 2 Monoalphabetic Substitution Cipher
 """
 
 plain = 'This is a mathematician named Dr. Gunter Janek. Works at a think tank called the Coolidge Institute. Specializes in large-number theory, prime numbers, factoring.'
@@ -21,9 +21,14 @@ def subs(plain, key):
 
     # Prints out the plain text given into encrypted text by looking up the value of 
     #  of each char in the alpha dictonary
+    crypt = ''
     for char in plain:
-        print (alpha[char], end="") if char.isalpha() else print (char, end='')
+        if char.isalpha():
+            crypt += alpha[char]
+        elif char == ' ':
+            crypt += char
+    return crypt
 
-subs(plain, temp)
+print(subs(plain, temp))
 
-# KLCJ CJ T WTKLIWTKCECTX XTWIF FG. AMXKIG OTXIU. QYGUJ TK T KLCXU KTXU ETDDIF KLI EYYDCFAI CXJKCKMKI. JZIECTDCVIJ CX DTGAI-XMWHIG KLIYGS, ZGCWI XMWHIGJ, NTEKYGCXA.
+# KLCJ CJ T WTKLIWTKCECTX XTWIF FG AMXKIG OTXIU QYGUJ TK T KLCXU KTXU ETDDIF KLI EYYDCFAI CXJKCKMKI JZIECTDCVIJ CX DTGAIXMWHIG KLIYGS ZGCWI XMWHIGJ NTEKYGCXA
